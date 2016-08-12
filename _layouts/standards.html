@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<main id="content" class="block-container" role="main" tabindex="-1">
+  <div class="go-back-link">
+    <a href="/">&#171; Go back</a>
+  </div>
+    <nav class="numbered-navigation" role="navigation">
+    {% if page.standards %}
+      <h1>{{ page.standards }}</h1>
+    {% endif %}
+    {% if page.nav_order %}
+      <ol>
+        {% assign standards_pages = site.pages | where: "standards", page.standards | sort: "nav_order" %}
+        {% for p in standards_pages %}
+          <li>
+            {% if p.url == page.url %}
+              {% assign this_page_index = forloop.index0 %}
+              {{ p.title }}
+            {% else %}
+              <a href="{{ p.url }}">{{ p.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+    </nav>
+	<div class="content-measure">
+		{{ content }}
+	</div>
+	{% if page.nav_order %}
+    <nav class="pagination" role="navigation">
+      {% assign next_page_index = this_page_index | plus: 1 %}
+      {% assign next_page = standards_pages[next_page_index] %}
+
+      {% if this_page_index > 0 %}
+        {% assign prev_page_index = this_page_index | minus: 1 %}
+        {% assign prev_page = standards_pages[prev_page_index] %}
+      {% endif %}
+
+      {% if next_page %}
+        <div class="next-page">
+          <a href="{{ next_page.url }}">
+            <span class="prefix">Next page:</span>
+            <span class="title">{{ next_page.title }}</span>
+          </a>
+        </div>
+      {% endif %}
+
+      {% if prev_page %}
+        <div class="previous-page">
+          <a href="{{ prev_page.url }}">
+            <span class="prefix">Previous page:</span>
+            <span class="title">{{ prev_page.title }}</span>
+          </a>
+        </div>
+      {% endif %}
+    </nav>
+  	{% endif %}
+</main>
