@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+    
+      GP Messaging Suppression -
+    
+    IUEC
+  </title>
+
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/e3854e97-b35c-4f31-bf5d-f804408f2ef8.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+  <!--[if lt IE 9]>
+    <script src="/public/javascripts/vendor/html5shiv.js" type="text/javascript"></script>
+    <script src="/public/javascripts/vendor/html5shiv-printshiv.js" type="text/javascript"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+<div id="skiplink-container">
+  <div>
+    <a href="#content">Skip to main content</a>
+  </div>
+</div>
+
+<div id="global-cookies-banner" role="alert">
+  <p>
+    NHS.UK uses cookies to make the site simpler.
+    <a href="/help/cookies">Find out more about cookies</a>
+  </p>
+</div>
+
+<header role="banner" id="global-header">
+  <div class="header-container">
+    <a href="/" class="header-logo" title="Go to the NHS.UK homepage">
+      <img src="/images/nhs-logotype.svg" alt="NHS" width="90" height="36">
+    </a>
+  </div>
+</header>
+
+<div class="phase-banner">
+  <p>
+    <b>Noticed that something needs improving?</b> Submit your change on <a href="https://github.com/iuec/iuec-tech-standards"> Github</a> or email your contribution to <a href="mailto:m.stibbs@nhs.net">m.stibbs@nhs.net</a>.
+  </p>
+</div>
+
+<main id="content" class="block-container" role="main" tabindex="-1">
+	<div class="go-back-link">
+    <a href="/new_iuec_standards">&#171; Go back</a>
+  </div>
+  
+    <nav class="numbered-navigation" role="navigation">
+      <h1>National Services</h1>
+
+      <ol>
+        
+        
+          <li>
+            
+              <a href="/new_iuec_standards/national-services/repeat_caller_service">Urgent Care Repeat Caller Service</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/new_iuec_standards/national-services/endpoint_location">Directory of Services Endpoint Service</a>
+            
+          </li>
+        
+          <li>
+            
+              
+              GP Messaging Suppression
+            
+          </li>
+        
+          <li>
+            
+              <a href="/new_iuec_standards/national-services/permission_to_view">Summary Care Record</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/new_iuec_standards/national-services/renewing_ssl_certs">Renewing NHS 111 Endpoint Certificates</a>
+            
+          </li>
+        
+      </ol>
+    </nav>
+	
+	<div class="content-measure">
+		<h2 id="gp-messaging-suppression">GP Messaging Suppression</h2>
+
+<p>[TOC]</p>
+
+<p>At the end of an patient journey within Integrated Urgent Care (IUC), a patient’s GP practice should be notified, messages should only be sent when an encouter with the IUC service has concluded and no call backs or further care is going to be provided by the service.</p>
+
+<p>This is to ensure the volume of messages a GP receives is kept to a minimum and the GP isn’t receiving duplicate information.</p>
+
+<h2 id="never-send-list">Never Send List</h2>
+
+<p>For the purposes of Post Event Messaging (PEM) to a GP the following dispositions are categorized as “Never Send”.</p>
+
+<p>This means that upon completion of a NHS Pathways assessment, reaching any of these disposition messages do not need to be transferred to inform the patients GP.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dx Code</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DX 28</td>
+      <td>Contact Pharmacist</td>
+    </tr>
+    <tr>
+      <td>DX 52</td>
+      <td>Refer to Police</td>
+    </tr>
+    <tr>
+      <td>DX 60</td>
+      <td>Contact Optician next routine appointment within 72 hours</td>
+    </tr>
+    <tr>
+      <td>DX 22</td>
+      <td>To be seen by Dental Practice within 3 working days</td>
+    </tr>
+    <tr>
+      <td>DX 23</td>
+      <td>Contact Orthodontist next working day</td>
+    </tr>
+    <tr>
+      <td>DX 45</td>
+      <td>Provide Service Location Information</td>
+    </tr>
+    <tr>
+      <td>DX 46</td>
+      <td>Refer to Health Information</td>
+    </tr>
+    <tr>
+      <td>DX 63</td>
+      <td>Refer to Fluline</td>
+    </tr>
+  </tbody>
+</table>
+
+
+	</div>
+	
+    <nav class="pagination" role="navigation">
+      
+      
+
+      
+
+      
+        <div class="next-page">
+          <a href="/new_iuec_standards/national-services/permission_to_view">
+            <span class="prefix">Next page:</span>
+            <span class="title">Summary Care Record</span>
+          </a>
+        </div>
+      
+
+      
+        <div class="previous-page">
+          <a href="/new_iuec_standards/national-services/endpoint_location">
+            <span class="prefix">Previous page:</span>
+            <span class="title">Directory of Services Endpoint Service</span>
+          </a>
+        </div>
+      
+    </nav>
+  	
+</main>
+
+<footer id="global-footer" role="contentinfo">
+  <div class="footer-container">
+    <nav>
+      <ul>
+        <li><a href="/help/cookies">Cookies</a></li>
+      </ul>
+    </nav>
+
+    <p>
+      &copy; Crown copyright<br>
+      Content available under <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0.</a>
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="/public/javascripts/cookies.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67365892-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
